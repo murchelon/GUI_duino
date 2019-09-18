@@ -1,13 +1,21 @@
 
 
-#include <RA8875.h>
+
+
 
 
 // GUIduino
-#include "BIB/GUI_Test_Params.h" 
-#include "GUIduino/GUI_Main.h" 
+#include "BIB/GUI_Duino_Test_Params.h" 
+#include "GUI_Duino/GUI_Main.h" 
 
 
+
+
+
+void teste()
+{
+	LogTerm(F("TESTEeeeeee"));
+}
 
 // INTERNA ARDUINO: SETUP
 void setup()
@@ -27,35 +35,48 @@ void setup()
 	GUI_ResetSelOptions();
 
 
-	String aTemp[6];
+	String aTemp[13];
 
-	aTemp[0] = F("Marcelo Rocha");
-	aTemp[1] = F("Andre Marques Silva");
-	aTemp[3] = F("Ricardo Prado");
-	aTemp[4] = F("Vera Maria B. Ferraz");
-	aTemp[5] = F("Paulo do Amaral Rocha");
+	aTemp[0] = F("1;Marcelo Rocha");
+	aTemp[1] = F("2;Andre Marques Silva");
+	aTemp[2] = F("3;Ricardo Prado");
+	aTemp[3] = F("4;Vera Maria B. Ferraz");
+	aTemp[4] = F("5;Paulo do Amaral Rocha");
+	aTemp[5] = F("6;Joao da cunha");
+	aTemp[6] = F("7;Mateus Vergaro");
+	aTemp[7] = F("8;Monica Balog");
+	aTemp[8] = F("9;Mariana Balog");
+	aTemp[9] = F("10;Gabriel Balog");
+	aTemp[10] = F("11;Pires de souza");
+	aTemp[11] = F("12;Julio Mesquita");
+	aTemp[12] = F("13;Simone de souza viottolon");
 	
 
-	GUI_Define_aSelOptions(aTemp, 5);
+	GUI_Define_aSelOptions(aTemp, 12);
+
+
+
+
+
+	//GUI_Render_SelectList(40, 53, 560, 12, Blue, White, 1, White, -1);
+	GUI_Render_SelectList(20, 70, 590, 7, Blue, White, 2, White, -1);
 
 
 
 
 
 	GUI_Render_GenericButton(F("TESTE"), 
-								F("Super!"), 
+								F("Sair"), 
 								1, 
 								White, 
 								Red, 
 								8, 
 								White, 
-								600, 
-								100, 
-								100, 
-								100);
+								680, 
+								25, 
+								0, 
+								0);
 
-
-	GUI_Render_SelectList(20, 40, 500, 10, Blue, White, 1, White, -1);
 
 	LogTerm(F("Resultado:"));
 
@@ -66,8 +87,6 @@ void setup()
 
 
 
-	while (1)
-	{}
 
 }
 
@@ -75,5 +94,11 @@ void setup()
 // INTERNA ARDUINO: LOOP ETERNO
 void loop() 
 {
- 
+	GUI_TestInterrupt();
 }
+
+
+
+
+
+

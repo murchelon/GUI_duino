@@ -64,6 +64,11 @@ SS:    PD_1
 #endif
 
 
+// definition of some funcions in order to be able to call them in any point in the code
+extern void GUI_Render_RefreshSelectOpt();
+extern void GUI_Touch_BtnCallBackFunc(String TAG);
+extern void GUI_Touch_SelectCallBackFunc(String TAG_Option);
+
 #include "GUI_Globals.h" 
 
 #include "GUI_Support.h" 
@@ -73,6 +78,33 @@ SS:    PD_1
 #include "GUI_Controls.h" 
 
 
+
+
+
+void GUI_Touch_BtnCallBackFunc(String TAG)
+{
+
+
+	if (TAG == F("TESTE"))
+	{
+		LogTerm(F("Funcionou tste"));
+	}
+}
+
+
+
+
+void GUI_Touch_SelectCallBackFunc(String TAG_Option)
+{
+
+	LogTerm(TAG_Option);
+
+	
+	if (TAG_Option == F("TESTE"))
+	{
+		LogTerm(F("TAG_Option"));
+	}
+}
 
 
 
